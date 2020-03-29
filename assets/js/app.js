@@ -41,7 +41,7 @@ guessBtn.addEventListener('click', () => {
         } else {
             guessLeft -= 1;
             if (guessLeft === 0) {
-                showErrorMessage(['error', 'shake'], false, 'error-message', true, 'اوه! ، فرصتت تموم شد.');
+                showErrorMessage(['error', 'shake'], true, 'error-message', true, 'اوه! ، فرصتت تموم شد.');
             } else {
                 showErrorMessage(['error', 'shake'], false, 'error-message', false, `عدد اشتباهه! فرصت باقی مونده ${guessLeft} هست`);
                 setTimeout(clearError, 2000);
