@@ -4,8 +4,12 @@
 $game-width: 100%;
 $game-height: 100vh;
 $game-font: 'Vazir';
-$game-box-width: 60%;
+$game-box-width: 85%;
 
+body{
+    background-image: url('../image/dice.png');
+    background-size: 200px;
+}
 .game {
     width: $game-width;
     height: $game-height;
@@ -19,14 +23,15 @@ $game-box-width: 60%;
         family: $game-font;
         size: 1.4em;
     }
+    
 }
 
 .game-box {
     width: $game-box-width;
-    padding: 5em 30px;
+    padding: 1em 30px;
     border-radius: 5px;
     box-shadow: 0 0 5px #afafaf;
-
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,18 +125,69 @@ $game-box-width: 60%;
 .message {
     font-size: 16px;
     padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+
 }
 
 .error-message {
-
+    background-color: rgb(255, 228, 228);
     color: $error-color;
 }
 
 .success-message {
+    background-color: rgb(230, 255, 230);
     color: $success-color;
 }
 
+.cheat-btn {
+    @extend .guess-btn;
+    background-color: $error-color;
 
+    &:hover {
+        background-color: $secondary-color;
+    }
+
+}
+
+.answer {
+    @extend .message;
+    @extend .success-message;
+    border: 2px solid $success-color;
+    opacity: 0;
+
+
+}
+
+.answer-code {
+    font: {
+        size: 20px;
+        weight: bold;
+    }
+}
+
+.show {
+    opacity: 1;
+    animation: animate 1s;
+}
+@media (max-width: 560px) {
+    .game-title{
+        font-size: 1.2em !important;
+    }
+    .game-description{
+        font-size: 0.5em !important;
+    }
+    .guess-btn, .cheat-btn{
+        width: 100% !important;
+    }
+    #game-input{
+        width: 100% !important;
+    }
+    .game-header, .game-content{
+        width: 100% !important;
+    }
+}
 @keyframes shake {
     0% {
         transform: translateX(0px);
@@ -147,5 +203,17 @@ $game-box-width: 60%;
 
     100% {
         transform: translateX(0px);
+    }
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: translate(0, 100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0px);
     }
 }

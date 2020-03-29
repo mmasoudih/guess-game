@@ -12,6 +12,11 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  background-image: url("../image/dice.png");
+  background-size: 200px;
+}
+
 .game {
   width: 100%;
   height: 100vh;
@@ -25,10 +30,11 @@
 }
 
 .game-box {
-  width: 60%;
-  padding: 5em 30px;
+  width: 85%;
+  padding: 1em 30px;
   border-radius: 5px;
   box-shadow: 0 0 5px #afafaf;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +63,7 @@
   font-size: 0.8em;
 }
 
-.guess-btn {
+.guess-btn, .cheat-btn {
   padding: 5px 15px;
   border: none;
   border-radius: 5px;
@@ -69,7 +75,7 @@
   font-size: 16px;
   outline: none;
 }
-.guess-btn:hover {
+.guess-btn:hover, .cheat-btn:hover {
   color: #ffffff;
   background-color: #aa87deff;
 }
@@ -102,19 +108,67 @@
   color: #ff5555ff;
 }
 
-.message {
+.message, .answer {
   font-size: 16px;
   padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 5px;
 }
 
 .error-message {
+  background-color: #ffe4e4;
   color: #ff5555ff;
 }
 
-.success-message {
+.success-message, .answer {
+  background-color: #e6ffe6;
   color: #2aff80ff;
 }
 
+.cheat-btn {
+  background-color: #ff5555ff;
+}
+.cheat-btn:hover {
+  background-color: #aa87deff;
+}
+
+.answer {
+  border: 2px solid #2aff80ff;
+  opacity: 0;
+}
+
+.answer-code {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.show {
+  opacity: 1;
+  animation: animate 1s;
+}
+
+@media (max-width: 560px) {
+  .game-title {
+    font-size: 1.2em !important;
+  }
+
+  .game-description {
+    font-size: 0.5em !important;
+  }
+
+  .guess-btn, .cheat-btn {
+    width: 100% !important;
+  }
+
+  #game-input {
+    width: 100% !important;
+  }
+
+  .game-header, .game-content {
+    width: 100% !important;
+  }
+}
 @keyframes shake {
   0% {
     transform: translateX(0px);
@@ -127,6 +181,16 @@
   }
   100% {
     transform: translateX(0px);
+  }
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0px);
   }
 }
 
