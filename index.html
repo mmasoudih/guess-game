@@ -8,15 +8,23 @@
 </head>
 <body>
     <div class="game">
-        <div class="game-header">
-            <div class="game-title">بازی حدس عدد</div>
-            <div class="game-description">یک عدد بین ۱ تا ۱۰ حدس بزنید</div>
-        </div>
-        <div class="game-content">
-            <input type="text" id="game-input" placeholder="یه عدد وارد کن ...">
-            <button class="guess-btn">امتحان کن</button>
-            <div class="notification">
-                <p class="message"></p>
+        <div class="game-box">
+            <div class="game-header">
+                <div class="game-title">بازی حدس عدد</div>
+                <div class="game-description">
+                    یک عدد بین 
+                    <span class="min-num"></span>
+                    تا 
+                    <span class="max-num"></span>
+                    حدس بزن
+                </div>
+            </div>
+            <div class="game-content">
+                <input type="number" id="game-input" class="error" placeholder="یه عدد وارد کن ...">
+                <button class="guess-btn">امتحان کن</button>
+                <div class="notification">
+                    <p class="message"></p>
+                </div>
             </div>
         </div>
     </div>

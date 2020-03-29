@@ -1,3 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+}
 
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/Vazir-FD.eot");
+  src: url("../fonts/Vazir-FD.eot?#iefix") format("embedded-opentype"), url("../fonts/Vazir-FD.woff2") format("woff2"), url("../fonts/Vazir-FD.woff") format("woff"), url("../fonts/Vazir-FD.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.game {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Vazir";
+  font-size: 1.4em;
+}
+
+.game-box {
+  width: 60%;
+  padding: 5em 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #afafaf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-header,
+.game-content {
+  margin: 30px 0;
+}
+
+.game-header .game-title {
+  text-align: center;
+  font-size: 2em;
+}
+.game-header .game-title:after {
+  content: "";
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 2px;
+  background: red;
+}
+.game-header .game-description {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.guess-btn {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #8080ffff;
+  transition: all 0.2s ease-in-out;
+  font-family: "Vazir";
+  font-size: 16px;
+  outline: none;
+}
+.guess-btn:hover {
+  color: #ffffff;
+  background-color: #aa87deff;
+}
+
+#game-input {
+  font-family: "Vazir";
+  font-size: 16px;
+  outline: none;
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  text-align: center;
+}
+#game-input:active, #game-input:focus {
+  border: 2px solid #aa87deff;
+}
+
+.shake {
+  animation: shake 0.2s;
+}
+
+.success {
+  border: 2px solid #2aff80ff !important;
+  color: #2aff80ff;
+}
+
+.error {
+  border: 2px solid #ff5555ff !important;
+  color: #ff5555ff;
+}
+
+.message {
+  font-size: 16px;
+  padding: 5px;
+}
+
+.error-message {
+  color: #ff5555ff;
+}
+
+.success-message {
+  color: #2aff80ff;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 
 /*# sourceMappingURL=app.css.map */

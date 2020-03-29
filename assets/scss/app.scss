@@ -1,0 +1,151 @@
+@import 'reset';
+@import 'fonts';
+@import 'colors';
+$game-width: 100%;
+$game-height: 100vh;
+$game-font: 'Vazir';
+$game-box-width: 60%;
+
+.game {
+    width: $game-width;
+    height: $game-height;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font: {
+        family: $game-font;
+        size: 1.4em;
+    }
+}
+
+.game-box {
+    width: $game-box-width;
+    padding: 5em 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #afafaf;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.game-header,
+.game-content {
+    margin: 30px 0;
+}
+
+.game-header {
+
+    .game-title {
+        text-align: center;
+        font-size: 2em;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            height: 2px;
+            background: red;
+        }
+    }
+
+    .game-description {
+        text-align: center;
+        font-size: .8em;
+    }
+
+}
+
+.guess-btn {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: $main-color;
+    transition: all .2s ease-in-out;
+
+    font: {
+        family: $game-font;
+        size: 16px;
+    }
+
+    outline: none;
+
+    &:hover {
+        color: #ffffff;
+        background-color: $secondary-color;
+    }
+
+}
+
+#game-input {
+    font: {
+        family: $game-font;
+        size: 16px;
+    }
+
+    outline: none;
+    width:150px;
+    padding: 5px;
+    border-radius: 5px;
+    border:2px solid #ddd;
+    text-align: center;
+
+    &:active,
+    &:focus {
+        border: 2px solid $secondary-color;
+    }
+}
+
+.shake {
+    animation: shake .2s;
+}
+
+.success {
+    border: 2px solid $success-color !important;
+    color: $success-color;
+}
+
+.error {
+    border: 2px solid $error-color !important;
+    color: $error-color;
+}
+
+.message {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.error-message {
+
+    color: $error-color;
+}
+
+.success-message {
+    color: $success-color;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
