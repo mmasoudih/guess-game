@@ -89,6 +89,7 @@ body {
   border-radius: 5px;
   border: 2px solid #ddd;
   text-align: center;
+  direction: ltr;
 }
 #game-input:active, #game-input:focus {
   border: 2px solid #aa87deff;
